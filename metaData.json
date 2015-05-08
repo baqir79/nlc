@@ -1,4 +1,4 @@
 {
- "table": {"name": "PurchaseHistory", "attributes":{"name":"POID",} 
+ "table": {"name": "PurchaseHistory", "attributes":[{"name":"POID", "type":"value", "facet":"0"},{}] 
 
 }

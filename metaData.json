@@ -1,4 +1,4 @@
 {
- "table": {"name": "PurchaseHistory", "attributes":[{"name":"POID", "type":"value", "facet":"0"},{}] 
-
+ "table": {"name": "PurchaseHistory", "attributes":[{"name":"POID", "type":"value", "linkTo":[]},{"name":"Vendor", "type":"facet", "linkTo":["DeptSpend","VendorSpend"]}] 
+}
 }

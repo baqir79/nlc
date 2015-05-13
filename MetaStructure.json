@@ -1,0 +1,11 @@
+[
+{
+"TableName": "PurchaseHistory", "attributes":[{"AttrName":"POID", "type":"value", "linkTo":["PaymentHistory"]},{"AttrName":"VoucherID", "type":"value", "linkTo":["PaymentHistory"]},{"AttrName":"Vendor", "type":"facet", "linkTo":["DeptSpend","VendorSpend"]}]
+},
+{
+"TableName": "PaymentHistory", "attributes":[{"AttrName":"VoucherID", "type":"value", "linkTo":["POID"]},{"AttrName":"Vendor", "type":"facet", "linkTo":["DeptSpend","VendorSpend"]}]
+},
+{
+"TableName": "Department", "attributes":[{"AttrName":"DeptId", "type":"value", "linkTo":["Purchase History", "PaymentHistory"]},{"AttrName":"Vendor", "type":"facet", "linkTo":["DeptSpend","VendorSpend"]}] 
+}
+]

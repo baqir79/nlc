@@ -1,11 +1,14 @@
 [
 {
-"TableName": "PurchaseHistory", "attributes":[{"AttrName":"POID", "type":"value", "linkTo":["PaymentHistory"]},{"AttrName":"VoucherID", "type":"value", "linkTo":["PaymentHistory"]},{"AttrName":"Vendor", "type":"facet", "linkTo":["DeptSpend","VendorSpend"]}]
+"TableName": "PurchaseHistory", "attributes":[{"AttrName":"Unit", "type":"facet", "UniversalTag":"POBU", "Behavior":["Link","RollUp"]},{"AttrName":"PO No.", "type":"Value", "UniversalTag":"POID", "Behavior":["Link", "Count", "Count Distinct"]},{"AttrName":"Method", "type":"facet", "UniversalTag":"Method", "Behavior":["Link","RollUp"]},{"AttrName":"PO Date", "type":"DateTime", "UniversalTag":"PODT"},{"AttrName":"Vendor", "type":"facet", "UniversalTag":"VendorId", "Behavior":["Link","RollUp"]},{"AttrName":"Buyer", "type":"facet", "UniversalTag":"BuyerID", "Behavior":["Link","RollUp"]},{"AttrName":"Line", "type":"value", "UniversalTag":"POLine"},{"AttrName":"Item", "type":"facet", "UniversalTag":"ItemID", "Behavior":["Link","RollUp"]},{"AttrName":"Mfg ID", "type":"facet", "UniversalTag":"MfgId", "Behavior":["Link","RollUp"]},{"AttrName":"PO Qty", "type":"Measure", "UniversalTag":"POQty", "Behavior":["Sum"]},{"AttrName":"Price", "type":"Attr", "UniversalTag":"PricePO"}, {"AttrName":"Line Amount", "type":"Measure", "UniversalTag":"ExtLineAmount", "Behavior":["Sum"]},{"AttrName":"Dept", "type":"facet", "UniversalTag":"DeptID", "Behavior":["Link"]}]
 },
 {
-"TableName": "PaymentHistory", "attributes":[{"AttrName":"VoucherID", "type":"value", "linkTo":["POID"]},{"AttrName":"Vendor", "type":"facet", "linkTo":["DeptSpend","VendorSpend"]}]
+"TableName": "VoucherHistory", "attributes":[{"AttrName":"Unit", "type":"facet", "UniversalTag":"VchrBU", "Behavior":["Link","RollUp"]},{"AttrName":"Voucher", "type":"Value", "UniversalTag":"POBU", "Behavior":["Link","Count", "Distinct Count"]},{"AttrName":"Invoice", "type":"facet", "UniversalTag":"Invoice", "Behavior":["Link","Count", "Distinct Count"]}, {"AttrName":"Date", "type":"DateTime", "UniversalTag":"VoucherDate"}, {"AttrName":"Vendor", "type":"facet", "UniversalTag":"VendorId", "Behavior":["Link","RollUp"]},{"AttrName":"PO No.", "type":"facet", "UniversalTag":"POID", "Behavior":["Link"]},{"AttrName":"Unit Price", "type":"Attr", "UniversalTag":"InvPrice"},{"AttrName":"Quantity", "type":"Measure", "UniversalTag":"InvQty", "Behavior":["Sum"]},{"AttrName":"Dept", "type":"facet", "UniversalTag":"DeptID", "Behavior":["Link"]}]
 },
 {
-"TableName": "Department", "attributes":[{"AttrName":"DeptId", "type":"value", "linkTo":["Purchase History", "PaymentHistory"]},{"AttrName":"Vendor", "type":"facet", "linkTo":["DeptSpend","VendorSpend"]}] 
+"TableName": "Department", "attributes":[{"AttrName":"DeptID", "type":"facet", "UniversalTag":"DeptID", "Behavior":["Link"]},{"AttrName":"Descr", "type":"Attr", "UniversalTag":"DeptDescr"}] 
+},
+{
+"TableName": "Vendor", "attributes":[{"AttrName":"VendorId", "type":"facet", "UniversalTag":"VendorId", "Behavior":["Link"]},{"AttrName":"Descr", "type":"Attr", "UniversalTag":"VendorDescr"},{"AttrName":"Addrress", "type":"Attr", "UniversalTag":"VendorAddress"}] 
 }
 ]
